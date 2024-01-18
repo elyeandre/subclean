@@ -1,4 +1,4 @@
- #! /usr/bin/env node
+#! /usr/bin/env node
 import { statSync, existsSync, readdirSync, readFileSync, writeFileSync, mkdirSync, unlinkSync } from 'fs';
 import { dirname, join, resolve, extname, basename } from 'path';
 import { parseSync, stringifySync, Format, NodeList } from 'subtitle';
