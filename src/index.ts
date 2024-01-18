@@ -579,7 +579,7 @@ class SubClean {
     }
 
     public async init() {
-        this.ensureDirs();
+        // this.ensureDirs();
         // Load the blacklist
         this.loadBlacklist('main');
         this.loadBlacklist('users');
@@ -610,7 +610,7 @@ class SubClean {
     }
 
     public async module(raw: string, opts: IArguments) {
-        this.ensureDirs();
+        // this.ensureDirs();
         // Load the blacklist
         this.loadBlacklist('main');
         this.loadBlacklist('users');
