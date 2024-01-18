@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+ #! /usr/bin/env node
 import { statSync, existsSync, readdirSync, readFileSync, writeFileSync, mkdirSync, unlinkSync } from 'fs';
 import { dirname, join, resolve, extname, basename } from 'path';
 import { parseSync, stringifySync, Format, NodeList } from 'subtitle';
@@ -519,8 +519,8 @@ class SubClean {
 
     private ensureDirs() {
         let $app = this.getPath();
-        let $filters = join($app, 'filters');
-        let $logs = join($app, 'logs');
+        let $filters = join(process.cwd(), $app, 'filters');
+        let $logs = join(process.cwd(), $app, 'logs');
         // Ensure user directories exist
         if (!existsSync($app)) mkdirSync($app);
         if (!existsSync($filters)) mkdirSync($filters);
@@ -579,7 +579,7 @@ class SubClean {
     }
 
     public async init() {
-        // this.ensureDirs();
+        this.ensureDirs();
         // Load the blacklist
         this.loadBlacklist('main');
         this.loadBlacklist('users');
@@ -610,7 +610,7 @@ class SubClean {
     }
 
     public async module(raw: string, opts: IArguments) {
-        // this.ensureDirs();
+        this.ensureDirs();
         // Load the blacklist
         this.loadBlacklist('main');
         this.loadBlacklist('users');
