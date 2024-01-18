@@ -249,7 +249,7 @@ class SubClean {
 
     private writeLogs() {
         try {
-            let $logs = path.join('/tmp', 'logs');
+            let $logs = join('/tmp', 'logs');
             // const target = join(this.getPath(), 'logs', 'latest.txt');
             const target = join($logs, 'latest.txt');
             this.saveFile(this.log_data, target);
@@ -523,7 +523,7 @@ class SubClean {
         let $app = this.getPath();
         let $filters = join($app, 'filters');
         // let $logs = join($app, 'logs');
-        let $logs = path.join('/tmp', 'logs');
+        let $logs = join('/tmp', 'logs');
         // Ensure user directories exist
         if (!existsSync($app)) mkdirSync($app);
         if (!existsSync($filters)) mkdirSync($filters);
