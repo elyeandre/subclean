@@ -1,3 +1,4 @@
+/// <reference types="node" />
 export interface IArguments {
     /**
      * Subtitle file to clean.
@@ -55,6 +56,14 @@ export interface IArguments {
      */
     update: boolean;
     /**
+     * Forced file encoding
+     */
+    encoding: BufferEncoding;
+    /**
+     * Condition to switch from utf-8 to ascii
+     */
+    encodefile: 'always' | 'never' | 'notenglish';
+    /**
      * File extension. Used to check for .vtt or .srt
      */
     ext: string;
@@ -84,5 +93,13 @@ export interface IArguments {
 export interface INode {
     data: {
         text: string;
+    };
+}
+export interface IFE {
+    encoding: string;
+    language: string;
+    confidence: {
+        encoding: number;
+        language: number;
     };
 }

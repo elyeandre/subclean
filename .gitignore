@@ -109,3 +109,6 @@ bin/
 # Test file
 subtitle.srt
 samples/
+test.ts
+tests/
+tests-safe/
